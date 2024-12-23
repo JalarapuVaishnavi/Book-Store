@@ -1,0 +1,88 @@
+
+body {
+	background-image: url(book.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	margin-top: 25px;
+	font-family: cursive;
+	
+}
+.topbar{
+	margin-left:45px;
+	width: 1380px;
+	height: 110px;
+	background: radial-gradiant(rgba(255,255,255,0.6));
+	box-shadow:0 0 10px rgba(0,0,0,0.6);
+	border-radius:38px;
+}
+.navs{
+	display:flex;
+	padding:12px 5%;
+}
+.logo{
+	margin-top: 5px;
+	color: #fff;
+	font-size:35px;
+	float: left;
+	cursor: pointer;
+}
+.navs ul{
+	flex: 1;
+	text-align:right;
+	font-size: 25px;
+}
+.navs ul li{
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+}
+.navs ul li a{
+	text-decoration:none;
+	color: #000;
+	transition: 0.2s ease;
+}
+.navs ul li a:hover{
+	color: #fff;
+}
+
+.navs ul li ul {
+	position: absolute;
+	width: 150px;
+	background: #fff;
+	display: none;
+}
+.navs ul li ul li{
+	width: 100px;
+	border-top:1px soloid rgba(0,0,0,.1);
+}
+.navs ul li:focus-within >ul,
+.navs ul li:hover>ul{
+	display:initial;
+}
+
+h2 {
+      width:200px;
+	height:200px;
+    animation-duration: 10s;
+	position:relative;
+	animation-name: text;
+    animation-iteration-count: infinite;
+	animation-direction:alternate-reverse;
+	color:#ff00ff;
+}
+     
+#two {
+      animation-timing-function: linear;
+	  }
+     
+@keyframes text {
+  
+ 	from{
+		margin-left:100%;
+	}
+	to{
+		margin-left:0%
+	}
+    }

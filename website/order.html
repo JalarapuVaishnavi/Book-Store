@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order</title>
+  <style>
+    /* CSS styles for the order page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    p {
+      text-align: center;
+      color: #333;
+    }
+
+    .product-details {
+      margin: 20px auto;
+      max-width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-details img {
+      display: block;
+      margin: 0 auto 10px;
+      max-width: 100%;
+    }
+
+    .product-details h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .product-details p {
+      margin: 10px 0;
+    }
+
+    .product-details .address-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .product-details .payment-label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .product-details .payment-option {
+      margin-bottom: 10px;
+    }
+
+    .product-details .payment-option input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .product-details .place-order-button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .product-details .place-order-button:hover {
+      background-color: #45a049;
+    }
+	uct-details .payment-image {
+      text-align: center;
+      margin-top: 20px;
+  </style> 
+
+</head>
+<body>
+  <h1>Order Details</h1>
+   <form action="order.jsp" method="post">
+  <div class="product-details">
+    <img id="product-image" name="image" src="" alt="Product Image">
+    <h2 id="product-type" name="breed"></h2>
+    <p id="product-cost" name="cost"></p> 
+<input type="hidden" name="image" id="hidden-image">
+      <input type="hidden" name="breed" id="hidden-breed">
+      <input type="hidden" name="cost" id="hidden-cost"> 
+    <input type="text" class="address-input" name="address" placeholder="Enter your address">
+    <input type="tel" class="address-input" name="phone" placeholder="Enter your phone number">
+    <input type="text" class="address-input" name="name" placeholder="Enter your name">
+    <input type="text" class="address-input" name="tra" placeholder="Enter TransactionId">
+	<div class="payment-label">Payment Options:</div>
+    <div class="payment-option">
+      <h4>-> Cash on delivery<br>-> Online payment through qr<h4>
+	  <div class="payment-image">
+          <img src="myqr.jpg">
+    </div>
+     <button  class="place-order-button" type="submit">Place Order</button>
+  </div> 
+</form>
+  <script>
+  window.onload = function() {
+    // Get the product details from the query parameters in the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var productType = urlParams.get("type");
+    var productCost = urlParams.get("cost");
+    var imageUrl = urlParams.get("image");
+
+    // Set the product details on the order page
+    document.getElementById("product-type").textContent = productType;
+    document.getElementById("product-cost").textContent = productCost;
+    document.getElementById("product-image").src = imageUrl;
+
+    // Set the values of hidden input fields
+    document.getElementById("hidden-breed").value = productType;
+    document.getElementById("hidden-cost").value = productCost;
+
+    // Add event listener to the order button
+    var orderButton = document.querySelector(".place-order-button");
+    orderButton.addEventListener("click", placeOrder);
+  };
+
+  function placeOrder() {
+    // Logic for placing the order goes here
+    // This function is executed when the "Place Order" button is clicked
+    // The form will be submitted to "upload.jsp" automatically
+  }
+</script>
+
+</body>
+</html>

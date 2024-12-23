@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>read</title>
+  </head>
+  <body>
+    <div class="container" >
+      <h1>Details to Read</h1>
+      <form name="con_form" action="download.jsp" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">class</label>
+        <input type="text" id="subject" name="class" required>
+
+        <label for="subject">subject</label>
+        <input type="text" id="subject" name="sub" required>
+
+        <button type="submit">Submit</button>
+      </form>
+	  <a href='homepage.html'>home</a>
+    </div>
+	<style>
+body{
+	background: url(book.jpg);
+	height: 100vh;
+	background-size: cover;
+}	
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  background:33fcff;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+input{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: #99ff33;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+</style>
+  </body>
+</html>

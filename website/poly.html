@@ -1,0 +1,187 @@
+
+<head>
+   
+<script>
+    window.onload = function() {
+      var buyButtons = document.getElementsByClassName("buy-button");
+      for (var i = 0; i < buyButtons.length; i++) {
+        buyButtons[i].addEventListener("click", redirectToOrderPage);
+      }
+    };
+
+    function redirectToOrderPage(event) {
+      event.preventDefault();
+      var productType = event.target.parentNode.querySelector(".product-type").textContent;
+      var productCost = event.target.parentNode.querySelector(".product-cost").textContent;
+      var imageUrl = event.target.parentNode.querySelector("img").src;
+
+      // Redirect to order.html and pass the details as query parameters
+      var orderPageUrl = "order.html" + "?type=" + encodeURIComponent(productType) + "&cost=" + encodeURIComponent(productCost) + "&image=" + encodeURIComponent(imageUrl);
+      window.location.href = orderPageUrl;
+    }
+  </script>
+
+</head>
+<body>
+<header>
+    <div class="topbar">
+        <nav class="navs">
+            <ul>
+                <li><a href='login1.html'>Adminlogin</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a href='books.html'>Books</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a href="classes.html">Back</a></li>
+            </ul>
+        </nav>
+    </div>
+	<style>
+	.topbar {
+    width: 1510px;
+    height: 100px;
+	background-color:pink;
+}
+
+.topbar .navs {
+    display: flex;
+    padding: 20px 20%;
+}
+
+.topbar .navs ul {
+    flex: 1;
+    font-size: 25px;
+}
+
+.topbar .navs ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.topbar .navs ul li a {
+    text-decoration: none;
+    color: #000;
+    transition: 0.5s ease;
+}
+
+.topbar .navs ul li a:hover {
+    color: #fff;
+}
+
+.topbar .navs ul li ul {
+    position: absolute;
+    width: 150px;
+    background: #fff;
+    display: none;
+}
+
+.topbar .navs ul li ul li {
+    width: 100px;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.topbar .navs ul li:focus-within > ul,
+.topbar .navs ul li:hover > ul {
+    display: pink;
+}
+</style>
+<div class="grid-container">
+    <div class="grid-item">
+      <figure>
+      <img src="https://m.media-amazon.com/images/I/51nHaKN9kEL.jpg"><br>
+      <figcaption class="product-type">Fundamentals of mechanical Engineering</figcaption>
+      <figcaption class="product-cost">Cost: $10</figcaption>
+      <a href="order.html" class="buy-button">Buy Now</a><br>
+      </figure>
+    </div>
+    <div class="grid-item">
+      <figure>
+        <img src="https://rukminim1.flixcart.com/image/416/416/kbzergw0/book/6/5/6/building-construction-for-diploma-in-civil-engineering-as-per-original-imaft6ytvgpqrarb.jpeg?q=70"><br>
+      <figcaption class="product-type">Building construction</figcaption>
+      <figcaption class="product-cost">Cost: $15</figcaption>
+      <a href="order.html" class="buy-button">Buy Now</a><br>
+    </figure>
+    </div>
+    <div class="grid-item">
+      <figure>
+      <img src="https://m.media-amazon.com/images/I/51KRSqZDlCL.jpg" alt="Product 3"><br>
+      <figcaption class="product-type">Electrical materials</figcaption>
+      <figcaption class="product-cost">Cost: $20</figcaption>
+      <a href="order.html" class="buy-button">Buy Now</a><br>
+    </figure>
+    </div>
+    <div class="grid-item">
+      <figure>
+      <img src="https://m.media-amazon.com/images/I/51GXZ3h+D0L.jpg" alt="Product 4"><br>
+      <figcaption class="product-type">Computer graphics</figcaption>
+      <figcaption class="product-cost">Cost: $25</figcaption>
+      <a href="order.html" class="buy-button">Buy Now</a><br>
+	 
+    </figure>
+    </div>
+    <div class="grid-item">
+      <figure>
+      <img src="https://m.media-amazon.com/images/I/51QPR9uyndL.jpg" alt="Product 5"><br>
+	  <figcaption class="product-type">Environmental Tecnology</figcaption>
+      <figcaption class="product-cost">Cost: $30</figcaption>
+      <a href="order.html" class="buy-button">Buy Now</a><br>
+	  
+    </figure>
+    </div>
+    <div class="grid-item">
+      <figure>
+      <img src="https://m.media-amazon.com/images/I/91lGCYO1IyL._AC._SR360,460.jpg" alt="Product 6"><br>
+      <figcaption class="product-type">Air navigation</figcaption>
+      <figcaption class="product-cost">Cost: $35</figcaption>
+      <a href="order.html" class="buy-button">Buy Now</a><br>
+    </figure>
+    </div>
+    
+<style>
+/* Set styles for the grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr); /* Set 3 columns with equal width */
+    grid-gap: 20px; /* Add some space between grid items */ 
+    background-color: lightblue;
+  }
+  
+  /* Set styles for each grid item */
+  .grid-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black; /* Add a border around each item */
+    padding: 50px; 
+  } 
+  .grid-item img
+  {
+    width:80%;
+    margin-bottom: 20px;
+  } 
+  .grid-item img:hover
+  {
+    transform:scale(0.8);
+    border-radius: 10px;
+  }
+  /* Set styles for product type and cost */
+  .product-type,
+  .product-cost {
+    margin: 5px 0; /* Add some space between product type and cost */
+  }
+  
+  /* Set styles for the buy button */
+  .buy-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease; /* Add a smooth hover effect */
+  }
+  
+  .buy-button:hover {
+    background-color: #3e8e41;
+  }
+</style>
